@@ -6,6 +6,9 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('changeset');
+  this.route('changeset-validations');
+  this.route('without');
 });
 
 export default Router;

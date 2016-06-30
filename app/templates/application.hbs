@@ -1,3 +1,26 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class='pure-g leh-body'>
+  <div class='pure-u-1-4 leh-sidebar'>
+    <h1 id='title'>
+      {{link-to 'Changeset Examples' 'index'}}
+    </h1>
 
-{{outlet}}
+    <div class='pure-menu component-menu'>
+      <ul class='pure-menu-list'>
+        <li class='pure-menu-item'>
+          {{link-to 'Without Changeset' 'without' class='pure-menu-link'}}
+          {{link-to 'Changeset' 'changeset' class='pure-menu-link'}}
+          {{link-to 'Changeset Validations' 'changeset-validations' class='pure-menu-link'}}
+        </li>
+      </ul>
+    </div>
+
+    <div class='leh-narwin'>
+      <img src='images/narwin-small.png'>
+      <a href='//dockyard.com' class='dockyard'>DockYard</a>
+    </div>
+  </div>
+
+  <div class='pure-u-3-4'>
+    {{outlet}}
+  </div>
+</div>
