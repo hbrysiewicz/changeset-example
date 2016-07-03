@@ -6,6 +6,14 @@
       {{#each content.changes as |change|}}
         {{preview-change change=change}}
       {{/each}}
+
+      <div class='pure-control-group'>
+        <button class='button-small button-primary pure-button' {{action 'save'}}>Save Changes to Model</button>
+      </div>
+
+      <div class='pure-control-group'>
+        <button class='button-small button-primary pure-button' {{action 'rollback'}}>Undo Changes</button>
+      </div>
     </fieldset>
   </form>
 </div>
