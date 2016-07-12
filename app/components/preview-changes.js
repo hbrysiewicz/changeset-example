@@ -1,6 +1,4 @@
 import Ember from 'ember';
-import UserValidations from '../validations/user';
-import Changeset from 'ember-changeset';
 
 const {
   get
