@@ -27,6 +27,14 @@
         <label for='github'>Github</label>
         {{input type='text' id='github' placeholder='Github' value=content.github}}
       </div>
+
+      <div class='pure-control-group'>
+        <button class='button-small button-primary pure-button' {{action 'save' content}} disabled={{content.isInvalid}}>Save Changes to Model</button>
+      </div>
+
+      <div class='pure-control-group'>
+        <button class='button-small button-primary pure-button' {{action 'rollback' content}}>Undo Changes</button>
+      </div>
     </fieldset>
   </form>
 </div>

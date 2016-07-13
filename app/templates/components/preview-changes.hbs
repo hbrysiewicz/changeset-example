@@ -16,13 +16,5 @@
         {{/each}}
       </fieldset>
     {{/if}}
-
-    <div class='pure-control-group'>
-      <button class='button-small button-primary pure-button' {{action 'save'}} disabled={{content.isInvalid}}>Save Changes to Model</button>
-    </div>
-
-    <div class='pure-control-group'>
-      <button class='button-small button-primary pure-button' {{action 'rollback'}}>Undo Changes</button>
-    </div>
   </form>
 </div>

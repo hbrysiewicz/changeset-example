@@ -9,6 +9,6 @@ export default Ember.Mixin.create({
       return new Changeset(model, lookupValidator(validationMap), validationMap);
     }
 
-    return new Changeset(model, validationMap);
+    return new Changeset(model, validationMap).execute();
   }
 });
