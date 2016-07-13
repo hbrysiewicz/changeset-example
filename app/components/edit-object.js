@@ -18,7 +18,6 @@ export default Ember.Component.extend({
 
     rollback(changeset) {
       return changeset.rollback();
-      debugger;
     }
   }
 });
