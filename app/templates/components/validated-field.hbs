@@ -1,0 +1,13 @@
+<label for={{concat type '-' property}}>{{title}}</label>
+<input
+  class='u-full-width'
+  type={{type}}
+  id={{concat type '-' property}}
+  value={{get changeset property}}
+  oninput={{action (mut (get changeset property)) value='target.value'}}
+  onblur={{action validateProperty}}>
+{{#if (get changeset.error property)}}
+  <small>
+    {{get (get changeset.error property) "validation"}}
+  </small>
+{{/if}}

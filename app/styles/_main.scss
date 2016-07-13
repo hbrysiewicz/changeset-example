@@ -63,3 +63,14 @@ a {
     box-sizing: border-box;
   }
 }
+
+.validated-field {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.validated-field small {
+  position: absolute;
+  left: 184px;
+  top: 40px
+}

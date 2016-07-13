@@ -3,30 +3,56 @@
     <fieldset>
       <legend>{{title}}</legend>
 
-      <div class='pure-control-group'>
-        <label for='first-name'>First Name</label>
-        {{input type='text' id='first-name' placeholder='First Name' value=content.firstName}}
-      </div>
+      {{#with (changeset content validations) as |changeset|}}
+        <div class='pure-control-group'>
+           {{validated-field
+              type="text"
+              changeset=changeset
+              property="firstName"
+              validateProperty=(action "validateProperty" changeset "firstName")
+            }}
+        </div>
 
-      <div class='pure-control-group'>
-        <label for='last-name'>Last Name</label>
-        {{input type='text' id='last-name' placeholder='Last Name' value=content.lastName}}
-      </div>
+        <div class='pure-control-group'>
+           {{validated-field
+              type="text"
+              changeset=changeset
+              property="lastName"
+              validateProperty=(action "validateProperty" changeset "lastName")
+            }}
+        </div>
 
-      <div class='pure-control-group'>
-        <label for='email'>Email</label>
-        {{input type='text' id='email' placeholder='Email' value=content.email}}
-      </div>
+        <div class='pure-control-group'>
+           {{validated-field
+              type="text"
+              changeset=changeset
+              property="email"
+              validateProperty=(action "validateProperty" changeset "email")
+            }}
+        </div>
 
-      <div class='pure-control-group'>
-        <label for='twitter'>Twitter</label>
-        {{input type='text' id='twitter' placeholder='Twitter' value=content.twitter}}
-      </div>
+        <div class='pure-control-group'>
+           {{validated-field
+              type="text"
+              changeset=changeset
+              property="twitter"
+              validateProperty=(action "validateProperty" changeset "twitter")
+            }}
+        </div>
 
-      <div class='pure-control-group'>
-        <label for='github'>Github</label>
-        {{input type='text' id='github' placeholder='Github' value=content.github}}
-      </div>
+        <div class='pure-control-group'>
+           {{validated-field
+              type="text"
+              changeset=changeset
+              property="github"
+              validateProperty=(action "validateProperty" changeset "github")
+            }}
+        </div>
+
+        <button class='button-small button-primary pure-button' {{action 'save' changeset}} disabled={{changeset.isInvalid}}>Save Changes to Model</button>
+
+        <button class='button-small button-primary pure-button' {{action 'rollback' changeset}}>Undo Changes</button>
+      {{/with}}
     </fieldset>
   </form>
 </div>

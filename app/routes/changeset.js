@@ -1,14 +1,13 @@
 import Ember from 'ember';
-import Changeset from '../mixins/changeset';
 
 const {
   RSVP,
   Object: EmberObject
 } = Ember;
 
-export default Ember.Route.extend(Changeset, {
+export default Ember.Route.extend({
   model() {
-    let User = EmberObject.extend({
+    return EmberObject.extend({
       firstName: 'Heather',
       lastName: 'Brysiewicz',
       email: 'heather@dockyard.com',
@@ -19,12 +18,6 @@ export default Ember.Route.extend(Changeset, {
       save() {
         return new RSVP.Promise((resolve) => resolve());
       }
-    });
-    let user = User.create();
-    let changeset = this.changeset([user]);
-    return {
-      user: user,
-      changeset: changeset
-    };
+    }).create();
   }
 });
