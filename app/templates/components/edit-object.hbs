@@ -3,38 +3,37 @@
     <fieldset>
       <legend>{{title}}</legend>
 
-      <div class='pure-control-group'>
+      <div class='pure-control-group input-group'>
         <label for='first-name'>First Name</label>
-        {{input type='text' id='first-name' placeholder='First Name' value=content.firstName}}
+        {{input type='text' placeholder='First Name' value=content.firstName}}
+        {{#if (get content.error 'firstName')}}
+          <small> {{get (get content.error 'firstName') "validation"}} </small>
+        {{/if}}
       </div>
 
-      <div class='pure-control-group'>
+      <div class='pure-control-group input-group'>
         <label for='last-name'>Last Name</label>
-        {{input type='text' id='last-name' placeholder='Last Name' value=content.lastName}}
+        {{input type='text' placeholder='Last Name' value=content.lastName}}
       </div>
 
-      <div class='pure-control-group'>
+      <div class='pure-control-group input-group'>
         <label for='email'>Email</label>
-        {{input type='text' id='email' placeholder='Email' value=content.email}}
+        {{input type='text' placeholder='Email' value=content.email}}
       </div>
 
-      <div class='pure-control-group'>
+      <div class='pure-control-group input-group'>
         <label for='twitter'>Twitter</label>
-        {{input type='text' id='twitter' placeholder='Twitter' value=content.twitter}}
+        {{input type='text' placeholder='Twitter' value=content.twitter}}
       </div>
 
-      <div class='pure-control-group'>
+      <div class='pure-control-group input-group'>
         <label for='github'>Github</label>
-        {{input type='text' id='github' placeholder='Github' value=content.github}}
+        {{input type='text' placeholder='Github' value=content.github}}
       </div>
 
-      <div class='pure-control-group'>
-        <button class='button-small button-primary pure-button' {{action 'save' content}} disabled={{content.isInvalid}}>Save Changes to Model</button>
-      </div>
+      <button class='button-small button-primary pure-button' {{action 'save' content}} disabled={{content.isInvalid}}>Save Changes to Model</button>
 
-      <div class='pure-control-group'>
-        <button class='button-small button-primary pure-button' {{action 'rollback' content}}>Undo Changes</button>
-      </div>
+      <button class='button-small button-primary pure-button' {{action 'rollback' content}}>Undo Changes</button>
     </fieldset>
   </form>
 </div>

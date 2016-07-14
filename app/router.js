@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('changeset');
   this.route('changeset-validations');
   this.route('without');
+  this.route('merge');
 });
 
 export default Router;

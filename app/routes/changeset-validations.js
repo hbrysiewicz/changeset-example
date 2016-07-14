@@ -9,19 +9,13 @@ const {
 
 export default Ember.Route.extend(Changeset, {
   model() {
-    let User = EmberObject.extend({
+    let user = EmberObject.create({
       firstName: 'Heather',
       lastName: 'Brysiewicz',
       email: 'heather@dockyard.com',
       twitter: 'caligoanimus',
-      github: 'hbrysiewicz',
-
-      // TODO: ember-changeset shouldn't require this
-      save() {
-        return new RSVP.Promise((resolve) => resolve());
-      }
+      github: 'hbrysiewicz'
     });
-    let user = User.create();
 
     let changeset = this.changeset([user, UserValidations]);
     return {

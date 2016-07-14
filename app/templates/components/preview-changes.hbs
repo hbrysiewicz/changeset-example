@@ -7,14 +7,5 @@
         {{preview-change change=change}}
       {{/each}}
     </fieldset>
-
-    {{#if content.isInvalid}}
-      <fieldset>
-        <legend>Errors:</legend>
-        {{#each content.errors as |error|}}
-          {{preview-error error=error}}
-        {{/each}}
-      </fieldset>
-    {{/if}}
   </form>
 </div>
